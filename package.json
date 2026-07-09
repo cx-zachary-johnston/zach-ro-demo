@@ -1,0 +1,19 @@
+{
+  "name": "fae-fp-benchmark",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Express JSON API monolith for comparing deterministic SAST noise with an AI/FAE analysis pass.",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

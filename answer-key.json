@@ -1,0 +1,68 @@
+{
+  "fixture": "Express JSON API monolith",
+  "safe_baits": 19,
+  "planted_true_positives": 10,
+  "safe_routes": [
+    "/safe/xss/escaped",
+    "/safe/xss/wrapped-escape",
+    "/safe/xss/json",
+    "/safe/xss/profile-card",
+    "/safe/sql/user",
+    "/safe/sql/products",
+    "/safe/sql/order",
+    "/safe/ssrf/fetch",
+    "/safe/ssrf/status/:service",
+    "/safe/redirect",
+    "/safe/redirect/user/:id",
+    "/safe/files/read",
+    "/safe/files/report",
+    "/safe/command/hash",
+    "/safe/command/tool",
+    "/safe/orders/:id",
+    "/safe/admin/users/:id",
+    "/safe/preferences",
+    "/safe/reset-token"
+  ],
+  "vulnerable_routes": [
+    {
+      "route": "/vuln/xss/reflected",
+      "category": "Reflected XSS"
+    },
+    {
+      "route": "/vuln/sql/search",
+      "category": "SQL injection-style construction"
+    },
+    {
+      "route": "/vuln/ssrf/fetch",
+      "category": "SSRF"
+    },
+    {
+      "route": "/vuln/redirect",
+      "category": "Open redirect"
+    },
+    {
+      "route": "/vuln/files/read",
+      "category": "Path traversal"
+    },
+    {
+      "route": "/vuln/command/ping",
+      "category": "Command injection"
+    },
+    {
+      "route": "/vuln/orders/:id",
+      "category": "BOLA/IDOR"
+    },
+    {
+      "route": "/vuln/admin/users/:id",
+      "category": "Missing authorization"
+    },
+    {
+      "route": "/vuln/preferences",
+      "category": "Prototype pollution"
+    },
+    {
+      "route": "/vuln/reset-token",
+      "category": "Predictable token"
+    }
+  ]
+}
