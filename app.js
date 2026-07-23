@@ -135,10 +135,13 @@ app.post('/safe/xss/profile-card', (req, res) => {
 });
 
 /*
- * TRUE POSITIVE 1: reflected XSS.
+ * Fixed: reflected XSS — HTML-encode the query parameter before embedding
+ * it in the HTML response so that special characters cannot be interpreted
+ * as markup or script by the browser.
  */
 app.get('/vuln/xss/reflected', (req, res) => {
-  res.type('html').send(`<h1>Hello ${req.query.name || 'guest'}</h1>`);
+  const name = htmlEscape(req.query.name || 'guest');
+  res.type('html').send(`<h1>Hello ${name}</h1>`);
 });
 
 /*
